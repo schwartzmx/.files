@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/Users/Phil/ansible-module-dev'
+let g:netrw_dirhist_2='/Users/Phil/dotfiles'
+let g:netrw_dirhist_3='/Users/Phil/Python Tools'
+let g:netrw_dirhist_4='/Users/Phil/.codeintel'
