@@ -6,6 +6,13 @@ alias .....="cd ../../../.."
 alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
+# Clear
+alias cl="clear"
+
+# Time Machine
+alias backup="tmutil startbackup"
+alias lbackup="tmutil listbackups | tail -1"
+
 # Shortcuts
 alias d="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
@@ -144,4 +151,4 @@ alias poweroff="sudo shutdown -h now"
 
 # Add spacer to Dock
 alias spacer="defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type='spacer-tile';}'"
-alias killdock = "killall Dock"
+alias killdock="killall Dock"
