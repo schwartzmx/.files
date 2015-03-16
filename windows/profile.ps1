@@ -27,9 +27,18 @@ Function p
 {
     cd C:\Users\Fed-Phil\Projects
 }
+# Remove recursive force
+Function rmrf {
+    for($i=0; $i -lt $args.length; $i++){
+        Remove-Item -Recurse -Force $args[$i]
+    }
+}
 
+New-Alias cl clear
 New-Alias which get-command
 New-Alias open explorer
+Set-Alias notepad -Value "C:\Program Files (x86)\Notepad++\notepad++.exe"
+Set-Alias subl -Value "C:\Program Files\Sublime Text 3\sublime_text.exe"
 
 # Assumes GitBash is installed
 # $env:path += ";" + (Get-Item "Env:ProgramFiles(x86)").Value + "\Git\bin"      
