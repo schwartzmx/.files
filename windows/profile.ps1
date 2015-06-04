@@ -11,6 +11,11 @@ function Prompt() {if(Test-Path Function:\PrePoshGitPrompt){++$global:poshScope;
 Set-Alias python3 -Value C:\Python34\python.exe 
 Set-Alias pip3 -Value pip3.4.exe
 
+# Kill all Chrome Helper (tabs) sessions
+Function Chrome-Kill {
+    Get-Process | Where { $_.ProcessName -eq "chrome" } | Select -Skip 1 | ForEach-Object { $_.Kill() }
+}
+
 # For Editing your PowerShell profile
 Function Edit-Profile
 {
@@ -24,7 +29,8 @@ Function Edit-Hosts
 }
 
 # For Editing your Vim settings
-Function Edit-Vimrc{
+Function Edit-Vimrc
+{
     vim $home\_vimrc
 }
 
