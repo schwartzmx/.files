@@ -6,6 +6,17 @@ Set-Alias open explorer
 Set-Variable $HOME ~
 Set-Variable HOSTS "C:\Windows\System32\drivers\etc\hosts" -Force
 
+Function Set-EnvironmentPath {
+    param([String]$Path)
+    If ((Test-Path $Path) -and !($env:Path -like "*$Path*")) {
+        $env:Path += ";$Path"
+    }
+}
+
+
+# Additional PATH setup
+Set-EnvironmentPath -Path 'C:\Program Files\Oracle\VirtualBox'
+
 # Linux-like du 
 Function PoSh-DiskUsage {
     param(
@@ -13,7 +24,7 @@ Function PoSh-DiskUsage {
     )
     Get-ChildItem $path | % {
         $file = $_; 
-        Get-ChildItem -Recurse $_.FullName | 
+        Get-ChildItem -Recurse $_.FullName -OutBuffer 1000 | 
         Measure-Object -Property Length -Sum | 
         Select  @{ Name= "Name"; Expression= { $file } }, `
             @{ Name = "Sum (GB)"; Expression = {  "{0:N3}" -f ($_.Sum / 1024MB) } }, `
@@ -134,8 +145,13 @@ Function prompt {
 	return " "
 }
 
-Function p
-{
+Function p { # Projects
     If (Test-Path E:\Projects) { cd E:\Projects }
     Else { Throw "E:\Projects does not exist!" }
 }
+
+Function s { # Scripts
+    If (Test-Path E:\Scripts) { cd E:\Scripts }
+    Else { Throw "E:\Scripts does not exist!" }
+}
+
