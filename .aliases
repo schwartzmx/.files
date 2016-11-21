@@ -6,6 +6,10 @@ alias .....="cd ../../../.."
 alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
+# virtualenv
+alias venv-activate="source venv/bin/./activate"
+alias venv-deactivate="deactivate"
+
 # Clear
 alias cl="clear"
 

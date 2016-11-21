@@ -9,11 +9,7 @@ export PATH="/usr/local/bin:$PATH"
 #Alias for easy access to this profile
 alias bash_profile="vim /Users/Phil/.bash_profile"
 
-#Alias for opening files with Sublime using subl
-alias subl="'/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl'"
-
-
-export EDITOR=subl
+export EDITOR=vim
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
