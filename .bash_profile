@@ -7,7 +7,11 @@ export CLICOLOR=1
 export PATH="/usr/local/bin:$PATH"
 
 #Alias for easy access to this profile
-alias bash_profile="vim /Users/Phil/.bash_profile"
+alias bash_profile="vim /Users/pschwartz/.bash_profile"
+
+# Spark Path
+export SPARK_HOME=/Users/pschwartz/spark/spark-2.0.2-bin-hadoop2.7
+export PATH=${PATH}:${SPARK_HOME}/bin
 
 export EDITOR=vim
 
