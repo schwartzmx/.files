@@ -7,11 +7,14 @@ export CLICOLOR=1
 export PATH="/usr/local/bin:$PATH"
 
 #Alias for easy access to this profile
-alias bash_profile="vim /Users/pschwartz/.bash_profile"
+alias bash_profile="vim /Users/phil/.bash_profile"
 
 # Spark Path
-export SPARK_HOME=/Users/pschwartz/spark/spark-2.0.2-bin-hadoop2.7
+export SPARK_HOME=/Users/phil/spark/
 export PATH=${PATH}:${SPARK_HOME}/bin
+
+# Go
+export GOPATH=/Users/phil/go
 
 export EDITOR=vim
 
@@ -22,6 +25,11 @@ for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file"
     done
     unset file
+
+# Load our git auto complete
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
